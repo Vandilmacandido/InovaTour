@@ -842,10 +842,38 @@ section {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-.hero-section {
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.video-background video {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Cor e opacidade da película */
+  z-index: 1;
+}
+
+/* .hero-section {
   background: linear-gradient(to right, rgba(39, 70, 133, 0.8) 0%, rgba(61, 179, 197, 0.8) 100%), url(../img/hero-bg.jpg);
   position: relative;
-}
+} */
 
 .hero-section .wave {
   width: 100%;
@@ -970,6 +998,60 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Team Section
+--------------------------------------------------------------*/
+
+.team-member {
+  width: 280px;
+  margin: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+  transform: scale(1.05);
+}
+
+.member-content {
+  padding: 20px;
+}
+
+.member-content h3 {
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.team-member img {
+  max-width: 100%;
+  border-radius: 50%;
+  position: relative;
+  z-index: 0;
+  transition: transform 0.3s ease;
+}
+
+.team-member:hover img {
+  transform: scale(1.1);
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  flex-direction: row; 
+}
+
+@media screen and (max-width: 768px) {
+  .team-member {
+    width: 100%;
+  }
+}
+
+
+/*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 .footer {
@@ -1027,3 +1109,4 @@ section {
 .social a i {
   line-height: 0;
 }
+
